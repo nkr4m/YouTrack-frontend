@@ -14,3 +14,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Screens
+
+#1
+<div align="center">
+    <img src="https://github.com/nkr4m/YouTrack-frontend/blob/main/screens/00.png" width="400px"</img> 
+</div>
