@@ -1,0 +1,84 @@
+<h4 mat-dialog-title style="font-weight: 600;">{{val.st}} | {{val.obj}} <button style="float: right;" type="button"
+    class="text-center btn btn-primary btn-sm" (click)="DeleteTicket()"><mat-icon>delete</mat-icon></button> <button style="float: right; margin-right: 10px;" type="button"
+    class="text-center btn btn-primary btn-sm" (click)="UpdateTicket()">	<mat-icon>save</mat-icon></button></h4>
+<div mat-dialog-content>
+    <div class="container-fluid">
+        <div class="row">
+    
+            <h4 style="font-weight: 600;">{{val.ticket_against}}</h4>
+            
+            <div class="col-12 col-xs-12 col-md-8">
+
+                <h6 style="font-weight: 100;">Description</h6>
+                <ckeditor [(ngModel)]="model.editorData" [editor]="Editor"></ckeditor>
+                <br><br>
+                <h6 style="font-weight: 100;">Comments</h6>
+                <div class="card border-0 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <div class="card-body">
+                      
+                    </div>
+                  </div>
+    
+                <!-- <button (click)="saveTest()">save</button> -->
+            </div>
+            <div class="col-12 col-xs-12 col-md-4">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" style="font-size: 0.9rem;" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                Details
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+    
+                                <form class="b-form" [formGroup]="testForm">
+                                    <p>
+                                        <tui-input tuiTextfieldSize="s" formControlName="testValue">
+                                            Assignee
+                                            <input tuiTextfield type="email" />
+                                        </tui-input>
+                                    </p>
+                                    
+                                    <p>
+                                        <tui-input tuiTextfieldSize="s" formControlName="testValue">
+                                            Reporter
+                                            <input tuiTextfield type="email" />
+                                        </tui-input>
+                                    </p>
+                                </form>
+                                <br>
+    
+                                
+                            <mat-form-field appearance="fill">
+                                <mat-label>Start Date</mat-label>
+                                <input matInput [matDatepicker]="picker1" [(ngModel)]="startDate">
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matSuffix [for]="picker1">
+                                  </mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field appearance="fill">
+                                <mat-label>End Date</mat-label>
+                                <input matInput [matDatepicker]="picker2" [(ngModel)]="endDate">
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matSuffix [for]="picker2">
+                                  </mat-datepicker-toggle>
+                                <mat-datepicker #picker2></mat-datepicker>
+                            </mat-form-field>
+                            <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+

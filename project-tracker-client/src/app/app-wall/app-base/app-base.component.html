@@ -1,0 +1,152 @@
+<mat-toolbar class="sticky shadow-sm bg-body-tertiary" style="font-weight: 100; background-color: white;">
+    <mat-toolbar-row>
+        <span [routerLink]="['/']" style="cursor: pointer;">YouTrack</span>
+        <span class="example-spacer"></span>
+        <div class="expanded-nav">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <tui-hosted-dropdown style="width: 50px;" tuiDropdownAlign="left"
+                [tuiDropdownLimitWidth]="isMobile ? 'fixed' : 'min'" [tuiDropdownMaxHeight]="400" [content]="work"
+                [(open)]="open">
+                <button tuiButton appearance="flat" type="button" size="s">
+                    <span style="font-weight: bolder; font-size: 14px;"> Your work </span>
+                </button>
+            </tui-hosted-dropdown>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <tui-hosted-dropdown style="width: 50px;" tuiDropdownAlign="left"
+                [tuiDropdownLimitWidth]="isMobile ? 'fixed' : 'min'" [tuiDropdownMaxHeight]="400" [content]="project"
+                [(open)]="open1">
+                <button tuiButton appearance="flat" type="button" size="s">
+                    <span style="font-weight: bolder; ; font-size: 14px;"> Project </span>
+                </button>
+            </tui-hosted-dropdown>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <!-- <tui-hosted-dropdown style="width: 50px;" tuiDropdownAlign="left"
+                [tuiDropdownLimitWidth]="isMobile ? 'fixed' : 'min'" [tuiDropdownMaxHeight]="400"
+                [content]="collaborate" [(open)]="open2">
+                <button tuiButton appearance="flat" type="button" size="s">
+                    <span style="font-weight: bolder; ; font-size: 14px;"> Collaborate </span>
+                </button>
+            </tui-hosted-dropdown> -->
+        </div>
+        
+
+        <div style="position: absolute; right: 5%;">
+            
+            
+                <button [routerLink]="['notification']" tuiButton appearance="flat" type="button" size="s">
+                    <span style="font-weight: bolder; ; font-size: 14px;"> <mat-icon>notifications</mat-icon> </span>
+                </button>
+            
+            
+            
+            
+            <tui-hosted-dropdown style="width: 50px;" tuiDropdownAlign="left"
+                [tuiDropdownLimitWidth]="isMobile ? 'fixed' : 'min'" [tuiDropdownMaxHeight]="400"
+                [content]="account" [(open)]="open3">
+                <button tuiButton appearance="flat" type="button" size="s">
+                    <span style="font-weight: bolder; ; font-size: 14px;"> <mat-icon>account_circle</mat-icon> </span>
+                </button>
+            </tui-hosted-dropdown>
+
+            
+
+            
+        </div>
+        
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+
+
+<ng-template #work>
+    <tui-data-list>
+        <tui-opt-group>
+            <label for="">Recently worked</label>
+        </tui-opt-group>
+
+        
+            <button tuiOption class="option" (click)="navProj()" (click)="open = false">
+                {{recentWork}}
+            </button>
+        
+    </tui-data-list>
+</ng-template>
+
+
+<ng-template #project>
+    <tui-data-list>
+        
+
+        <tui-opt-group>
+            <button [routerLink]="['view-all']" tuiOption class="option" (click)="open1 = false">
+                View all projects
+            </button>
+            <button [routerLink]="['create-project']" tuiOption class="option" (click)="open1 = false">
+                Create project 
+            </button>
+        </tui-opt-group>
+    </tui-data-list>
+</ng-template>
+
+
+
+<ng-template #collaborate>
+    <tui-data-list>
+        <tui-opt-group>
+            <button tuiOption class="">
+                add-new teammate to the self owned project (under dev)
+            </button>
+        </tui-opt-group>
+
+        <!-- <tui-opt-group>
+            <button tuiOption class="option" (click)="open = false">
+                navigate2
+            </button>
+        </tui-opt-group> -->
+    </tui-data-list>
+</ng-template>
+
+<ng-template #account>
+    <tui-data-list>
+        <!-- <tui-opt-group>
+            <button tuiOption class="">
+                Make the most of your Atlassian products by extending them with projects.
+            </button>
+        </tui-opt-group> -->
+
+        <tui-opt-group>
+            <button [routerLink]="['user-account']" tuiOption class="option" (click)="open3 = false">
+                Account
+            </button>
+            <button tuiOption class="option" (click)="open3 = false" (click)="signOut()">
+                Sign-out
+            </button>
+        </tui-opt-group>
+    </tui-data-list>
+</ng-template>
+
+<ng-template #notify>
+    <tui-data-list>
+        <!-- <tui-opt-group>
+            <button tuiOption class="">
+                Make the most of your Atlassian products by extending them with projects.
+            </button>
+        </tui-opt-group> -->
+
+        <tui-opt-group>
+            <button  tuiOption class="option">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit cum dicta recusandae quibusdam pariatur tempore deleniti atque nihil quasi, fuga voluptates maxime corporis id nisi nesciunt vitae explicabo veritatis! Placeat!
+            </button>
+            <button [routerLink]="['notification']" (click)="open9 = false" tuiOption class="option">
+                view all alerts
+            </button>
+        </tui-opt-group>
+    </tui-data-list>
+</ng-template>

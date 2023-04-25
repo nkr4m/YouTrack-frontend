@@ -1,0 +1,58 @@
+
+
+
+<div class="container">
+  <h1 style="color: black; font-size: 32px; font-weight: bolder; color: #526ed3;">Owned Projects.</h1>
+  <table class="table table-hover">
+        <thead>
+          <tr>
+            <!-- <th scope="col">#</th> -->
+            <th scope="col" style="width: 20%;">Name</th>
+            <th scope="col" style="width: 20%;">Key</th>
+            <th scope="col" style="width: 20%;">Status</th>
+            <th scope="col" style="width: 20%;">Owner</th>
+            <th scope="col" style="width: 20%;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let obj of ProjectList">
+            <th scope="row" style="width: 20%; cursor: pointer;" (click)="viewProject(obj.id)">{{obj.projectName}}</th>
+            <td style="width: 20%;">{{obj.projectName}}</td>
+            <td style="width: 20%;">Active</td>
+            <td style="width: 30%; cursor: pointer;" [routerLink]="['../../user-account/profile']">{{obj.owner}}</td>
+            <td style="width: 20%;"><mat-icon>more_horiz</mat-icon></td>
+          </tr>
+
+        </tbody>
+      </table>
+</div>
+
+<div class="container">
+  <h1 style="color: black; font-size: 32px; font-weight: bolder; color: #526ed3;">Collab Projects.</h1>
+  <table class="table table-hover">
+        <thead>
+          <tr>
+            <!-- <th scope="col">#</th> -->
+            <th scope="col" style="width: 20%;">Name</th>
+            <th scope="col" style="width: 20%;">Key</th>
+            <th scope="col" style="width: 20%;">Status</th>
+            <th scope="col" style="width: 20%;">Owner</th>
+            <th scope="col" style="width: 20%;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let obj of CollabProjectList">
+            <th scope="row" style="width: 20%; cursor: pointer;" (click)="viewProject(obj.id)">{{obj.projectName}}</th>
+            <td style="width: 20%;">{{obj.projectName}}</td>
+            <td style="width: 20%;">Active</td>
+            <td style="width: 30%; cursor: pointer;" [routerLink]="['../../user-account/profile']">{{obj.owner}}</td>
+            <td style="width: 20%;"><mat-icon>more_horiz</mat-icon></td>
+          </tr>
+
+        </tbody>
+      </table>
+</div>
+
+
+
+

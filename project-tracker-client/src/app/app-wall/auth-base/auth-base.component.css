@@ -1,0 +1,34 @@
+.heading {
+    background: #0575E6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #021B79, #0575E6);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #021B79, #0575E6);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+@media screen and (min-width: 769px) and (max-width:1537px) {
+    .heading {
+        padding: 100px;
+    }
+}
+
+.mat-toolbar {
+    min-height: 50px !important; 
+    height: 50px !important;
+  }
+  
+  .mat-toolbar-row {
+    min-height: 50px !important; 
+    height: 50px !important;
+  }
+
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }

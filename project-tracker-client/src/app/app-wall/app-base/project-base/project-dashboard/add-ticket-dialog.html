@@ -1,0 +1,95 @@
+<h3 mat-dialog-title style="font-weight: 600;">{{val.ticket_against}} <button style="float: right;" type="button"
+        class="text-center btn btn-primary btn-sm" (click)="createNewTicket()">Create Ticket</button> </h3>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8">
+            <div class="mb-3">
+                <h6 style="font-weight: 100;">Ticket Title</h6>
+                <input type="text" [(ngModel)]="ticketTitle" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+
+            </div>
+
+            <h6 style="font-weight: 100;">Description</h6>
+            <ckeditor [(ngModel)]="model.editorData" [editor]="Editor"></ckeditor>
+            <br><br>
+            <h6 style="font-weight: 100;">Comments</h6>
+            <div class="card border-0 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                <div class="card-body">
+                </div>
+            </div>
+
+            
+           
+              
+
+        </div>
+        <div class="col-4">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" style="font-size: 0.9rem;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
+                            Tracking Details
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+
+
+
+                            
+                            <small class="text-center">
+                                Created January 1, 2023 at 7:10 PM
+                                <br>
+                                Updated January 13, 2023 at 4:57 PM
+                                <br>
+                                <br>
+                                <br>
+
+                            </small>
+                            <br>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Start Date</mat-label>
+                                <input matInput [matDatepicker]="picker1" [(ngModel)]="startDate">
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matSuffix [for]="picker1">
+                                  </mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field appearance="fill">
+                                <mat-label>End Date</mat-label>
+                                <input matInput [matDatepicker]="picker2" [(ngModel)]="endDate">
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matSuffix [for]="picker2">
+                                  </mat-datepicker-toggle>
+                                <mat-datepicker #picker2></mat-datepicker>
+                            </mat-form-field>
+                            <br>
+
+                        </div>
+
+                        
+                          
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+</div>
+
+<!-- <button style="float: right;" type="button" class="text-center btn btn-primary btn-sm"
+    (click)="createNewTicket()">Create</button> -->

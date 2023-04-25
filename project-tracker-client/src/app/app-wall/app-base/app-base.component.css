@@ -1,0 +1,23 @@
+.mat-toolbar {
+    min-height: 50px !important; 
+    height: 50px !important;
+  }
+  
+  .mat-toolbar-row {
+    min-height: 50px !important; 
+    height: 50px !important;
+  }
+
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+tui-data-list{
+    max-width: 320px;
+  }
+
+

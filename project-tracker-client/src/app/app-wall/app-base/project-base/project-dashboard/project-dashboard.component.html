@@ -1,0 +1,59 @@
+<tui-input tuiTextfieldIconLeft="tuiIconSearchLarge" [(ngModel)]="search">
+    Search
+</tui-input>
+<br>
+
+
+<div cdkDropListGroup>
+    <!-- <div class="example-container">
+        <h2>Available items</h2>
+
+        <div cdkDropList [cdkDropListData]="items" class="example-list" (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of items" cdkDrag>{{item}}</div>
+        </div>
+    </div>
+
+    <div class="example-container">
+        <h2>Shopping basket</h2>
+
+        <div cdkDropList [cdkDropListData]="basket" class="example-list" (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of basket" cdkDrag>{{item}}</div>
+        </div>
+    </div> -->
+
+
+
+
+
+
+
+    <div class="container-fluid" style="overflow-x: auto;">
+        <div class="row">
+            <div class="col-3 mb-2"
+                style="width: 24.1%; margin-right: 10px; padding: 20px; background-color: rgb(239, 239, 239);"
+                *ngFor="let o of TicketData">
+                <h6 style="color: rgb(141, 141, 141);">{{o.title}} <mat-icon style="float: right; cursor: pointer;"
+                        (click)="openAddTicket(o.title)">add</mat-icon>
+                </h6>
+                <br>
+<!-- style="cursor: grab; border-left: 4px #6eb16e solid;" -->
+                <div cdkDropList [cdkDropListData]="o.items" class="example-list" (cdkDropListDropped)="drop($event)">
+                    <div  [style.border-left]="
+                    (o.title=='To-Do') ? '#939393 12px solid'
+                    :  (o.title=='Pending') ? '#ff1414 12px solid'
+                    : (o.title=='Done') ? '#39FF14 12px solid'
+                    : (o.title=='Delivered') ? '#ffb014 12px solid'
+                    : '#ffffff'" 
+                    
+                        class="example-box shadow-sm p-3 mb-1 bg-body-tertiary"
+                        (click)="openViewTicket(o, item.title, item.description, item.reportedBy, item.createdDate, item.createdTime, item.startDate, item.endDate, item.ticketId, item.currentState)"
+                        *ngFor="let item of o.items" cdkDrag>{{item.title}}</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

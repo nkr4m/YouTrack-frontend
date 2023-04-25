@@ -1,0 +1,68 @@
+<h4 mat-dialog-title style="font-weight: 600;">{{val.st}} | {{val.obj}}</h4>
+<div mat-dialog-content>
+    <div class="container-fluid">
+        <div class="row">
+    
+            <h4 style="font-weight: 600;">{{val.ticket_against}}</h4>
+    
+            <div class="col-8">
+
+                <h6 style="font-weight: 100;">Description</h6>
+                <ckeditor [(ngModel)]="model.editorData" [editor]="Editor"></ckeditor>
+                <br><br>
+                <h6 style="font-weight: 100;">Comments</h6>
+                <div class="card border-0 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <div class="card-body">
+                      
+                    </div>
+                  </div>
+    
+                <!-- <button (click)="saveTest()">save</button> -->
+            </div>
+            <div class="col-4">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" style="font-size: 0.9rem;" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                Details
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+    
+                                <form class="b-form" [formGroup]="testForm">
+                                    <p>
+                                        <tui-input tuiTextfieldSize="s" formControlName="testValue">
+                                            Assignee
+                                            <input tuiTextfield type="email" />
+                                        </tui-input>
+                                    </p>
+                                    
+                                    <p>
+                                        <tui-input tuiTextfieldSize="s" formControlName="testValue">
+                                            Reporter
+                                            <input tuiTextfield type="email" />
+                                        </tui-input>
+                                    </p>
+                                </form>
+                                <br>
+    
+                                <small class="text-center" style="color: grey;">
+                                    Created January 1, 2023 at 7:10 PM
+                                    <br>
+                                    Updated January 13, 2023 at 4:57 PM
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+

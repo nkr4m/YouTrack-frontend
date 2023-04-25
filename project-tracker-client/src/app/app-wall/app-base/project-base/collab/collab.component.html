@@ -1,0 +1,40 @@
+<div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding: 40px;">
+    <h1 style="color: black; font-size: 50px; font-weight: bolder;">Invite & Collaborate.</h1>
+
+    <h6 style="color: black; font-size: 35px;">Invite editors using emailId</h6>
+    <h6 style="color: rgb(183, 183, 183); font-size: 15px;">Only owners can link users to the project. user will receive an invite if the account is regestered</h6>
+    <div class="input-group mb-3" style="width: 80%;">
+        <input type="text" [(ngModel)]="emailId" class="form-control" placeholder="Email Address" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button (click)="sendInvite()" class="btn btn-outline-secondary" type="button" id="button-addon2">Invite</button>
+      </div>
+
+      <br>
+      <h1 style="color: black; font-size: 50px; font-weight: bolder;">Existing Coolaborators.</h1>
+      <div class="container">
+        <table class="table table-hover">
+              <thead>
+                <tr>
+                  <!-- <th scope="col">#</th> -->
+                  <th scope="col" style="width: 20%;">Name</th>
+                  <th scope="col" style="width: 20%;">Role</th>
+                  <th scope="col" style="width: 20%;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let obj of collabList">
+                  <th scope="row" style="width: 20%; cursor: pointer;">{{obj.email}}</th>
+                  <th scope="row" style="width: 20%; cursor: pointer;">{{obj.role}}</th>
+                  
+                  <td style="width: 20%;"><mat-icon>more_horiz</mat-icon></td>
+                </tr>
+      
+              </tbody>
+            </table>
+      </div>
+        
+
+</div>
+
+
+
+

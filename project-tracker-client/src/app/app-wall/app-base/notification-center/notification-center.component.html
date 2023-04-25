@@ -1,0 +1,25 @@
+<div>
+    <h4 style="font-weight: 600; margin-top: 80px; margin-left: 30px;">Notification Center</h4>
+
+
+    <div class="container">
+
+        <h1 style="color: black; font-size: 50px; font-weight: bolder;">Invites.</h1>
+
+        <div class="card border-0 shadow-sm p-1 mb-2 bg-body-tertiary rounded" *ngFor="let obj of listInvites">
+            <div class="card-body" style="font-size: 18px;">
+                You have received an invite to collaborate on <strong>{{obj.projectName}}</strong> from
+                <strong>{{obj.sender}}</strong>
+                <br>
+                <br>
+                <div style="float: right;">
+                    <button type="button" (click)="acceptInvite(obj.collabId)" class="btn btn-primary btn-sm">Accept</button>
+                    &nbsp;
+                    <button type="button" (click)="rejectInvite(obj.collabId)" class="btn btn-secondary btn-sm">Dismiss</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,52 @@
+
+<div class="container" style="padding: 20px;">
+     
+             
+     <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-3">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <form [formGroup]="projectForm" (ngSubmit)="onSave()">
+                            <h4 style="font-weight: 600;">Add Project Details</h4>
+                            <div id="emailHelp" class="form-text" style="margin-bottom: 20px; margin-top: -10px;">You can change these details anytime in your project settings.</div>
+                            
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Project Name</label>
+                              <input type="text" class="form-control" formControlName="projectName">
+                              <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                            </div>
+                            <div class="mb-3">
+                              <!-- <label for="exampleInputPassword1" class="form-label">Project Key</label> -->
+                              <input disabled type="text" class="form-control"  placeholder="key will be auto-generated">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Create</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="card border-0">
+                    <div class="card-body">
+                        
+                            <h4 style="font-weight: 600;">Existing Project Details</h4>
+                            <div id="emailHelp" class="form-text" style="margin-top: -10px;">Existing project details.</div>
+                            <div *ngFor="let o of projectList"  class="card border-0 shadow-sm p-3 mb-2 bg-body-tertiary rounded" style="width: 30rem; cursor: pointer;">
+                                <ul class="list-group list-group-flush">
+                                  <li class="list-group-item">{{o.projectName}}</li>
+                                  
+                                </ul>
+                                
+                              </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+            
+        </div>
+    </div>
+
+</div>

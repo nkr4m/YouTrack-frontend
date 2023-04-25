@@ -1,0 +1,13 @@
+<div class="container-fluid">
+<dx-scheduler timeZone="Asia/Kolkata" [dataSource]="appointments" [views]="['month']" currentView="month"
+    [startDayHour]="5" [endDayHour]="17" [currentDate]="currentDate" [height]="600"
+    (onAppointmentFormOpening)="onAppointmentFormOpening($event)">
+    <dxo-editing #editingOptions [allowAdding]="false" [allowDeleting]="false" [allowUpdating]="false"
+        [allowResizing]="false" [allowDragging]="false"></dxo-editing>
+
+        <!-- <dxi-view type="month" groupOrientation="horizontal"></dxi-view> -->
+    <dxi-resource fieldExpr="roomId" label="room" [dataSource]="resources"></dxi-resource>
+    <dxo-scrolling mode="virtual"> </dxo-scrolling>
+    
+</dx-scheduler>
+</div>
