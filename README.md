@@ -19,10 +19,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 
 <p align="center">
-#1
   <img alt="Light" src="https://github.com/nkr4m/YouTrack-frontend/blob/main/screens/00.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  #2
   <img alt="Dark" src="https://github.com/nkr4m/YouTrack-frontend/blob/main/screens/01.png" width="45%">
 </p>
 
